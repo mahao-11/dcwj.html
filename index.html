@@ -46,9 +46,7 @@
             letter-spacing: 0.04em;
             color: var(--ink);
             background:
-                radial-gradient(circle at 15% 12%, rgba(165, 62, 34, 0.26), transparent 16%),
-                radial-gradient(circle at 85% 20%, rgba(109, 46, 24, 0.28), transparent 18%),
-                linear-gradient(135deg, #130803 0%, #28100a 35%, #3f1a0f 60%, #241008 100%);
+                linear-gradient(180deg, #140605 0%, #1b0a07 44%, #090303 100%);
             overflow-x: hidden;
             overflow-y: auto;
             position: relative;
@@ -61,13 +59,11 @@
         body::before {
             content: "";
             position: fixed;
-            inset: -12%;
+            inset: 0;
             background:
-                repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.034), rgba(255, 255, 255, 0.034) 1px, transparent 1px, transparent 6px),
-                repeating-linear-gradient(90deg, rgba(120, 42, 22, 0.035), rgba(120, 42, 22, 0.035) 1px, transparent 1px, transparent 10px),
-                radial-gradient(circle at 35% 22%, rgba(255, 180, 120, 0.08), transparent 16%);
+                repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px),
+                repeating-linear-gradient(90deg, rgba(110, 34, 16, 0.025), rgba(110, 34, 16, 0.025) 1px, transparent 1px, transparent 12px);
             opacity: 0.9;
-            mix-blend-mode: screen;
             pointer-events: none;
             z-index: 0;
         }
@@ -77,13 +73,11 @@
             position: fixed;
             inset: 0;
             background:
-                radial-gradient(circle at 15% 75%, rgba(117, 35, 20, 0.28), transparent 10%),
-                radial-gradient(circle at 85% 18%, rgba(90, 24, 12, 0.25), transparent 11%),
-                radial-gradient(circle at 50% 50%, rgba(255, 211, 168, 0.05), transparent 16%);
-            mix-blend-mode: multiply;
-            opacity: 0.95;
+                radial-gradient(circle at 18% 20%, rgba(255, 140, 94, 0.08), transparent 10%),
+                radial-gradient(circle at 82% 16%, rgba(77, 19, 10, 0.18), transparent 11%);
             pointer-events: none;
             z-index: 0;
+            mix-blend-mode: screen;
         }
 
         #particlesCanvas {
@@ -232,11 +226,11 @@
             position: fixed;
             top: 0;
             left: 0;
-            height: 4px;
+            height: 12px;
             width: 0;
             background: linear-gradient(90deg, transparent, #ff9c73, #8b2412);
             z-index: 10;
-            box-shadow: 0 0 15px rgba(126, 30, 16, 0.58);
+            box-shadow: 0 0 18px rgba(126, 30, 16, 0.62);
             transition: width 0.28s ease-out;
             pointer-events: none;
         }
@@ -326,20 +320,19 @@
         .q-card {
             width: 100%;
             max-width: 540px;
-            padding: 28px 24px 20px;
-            border-radius: 24px;
+            padding: 24px 20px 18px;
+            border-radius: 0;
             background:
-                linear-gradient(180deg, rgba(244, 225, 200, 0.96), rgba(196, 164, 132, 0.93)),
-                repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04) 1px, transparent 1px, transparent 10px);
-            border: 2px solid rgba(92, 46, 28, 0.9);
+                linear-gradient(180deg, #efe0c7 0%, #d5b595 100%);
+            border: 2px solid rgba(72, 32, 18, 0.96);
             box-shadow:
-                10px 12px 0 rgba(46, 20, 10, 0.28),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                0 0 32px rgba(31, 9, 4, 0.2);
-            transform: rotate(-0.4deg);
+                4px 4px 0 rgba(24, 8, 4, 0.44),
+                inset 0 1px 0 rgba(255, 255, 255, 0.22);
+            transform: rotate(-0.35deg);
             transition: transform 0.35s ease, border-color 0.5s ease, box-shadow 0.5s ease;
             position: relative;
             overflow: hidden;
+            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 12px), 0 12px);
         }
 
         .q-card::before {
@@ -347,20 +340,16 @@
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.16) 48%, transparent 60%),
-                radial-gradient(circle at 12% 14%, rgba(245, 218, 184, 0.4), transparent 12%),
-                radial-gradient(circle at 82% 80%, rgba(124, 52, 25, 0.12), transparent 10%);
+                linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.08) 48%, transparent 60%);
             pointer-events: none;
-            mix-blend-mode: soft-light;
         }
 
         .q-card.aged {
-            transform: rotate(-0.8deg) translateY(2px);
+            transform: rotate(-0.75deg) translateY(1px);
             box-shadow:
-                8px 10px 0 rgba(46, 20, 10, 0.34),
-                inset 0 1px 0 rgba(255, 255, 255, 0.28),
-                0 0 42px rgba(38, 12, 7, 0.24);
-            border-color: rgba(85, 34, 18, 1);
+                3px 3px 0 rgba(24, 8, 4, 0.48),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-color: rgba(67, 28, 15, 1);
         }
 
         .q-card.bleed { animation: cardBleed 0.8s ease-out; }
@@ -369,29 +358,27 @@
         @keyframes cardBleed {
             0% {
                 box-shadow:
-                    10px 12px 0 rgba(46, 20, 10, 0.28),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                    0 0 32px rgba(31, 9, 4, 0.2);
+                    4px 4px 0 rgba(24, 8, 4, 0.44),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.22);
             }
-            30% {
+            50% {
                 box-shadow:
-                    10px 12px 0 rgba(46, 20, 10, 0.28),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                    0 0 54px rgba(123, 27, 14, 0.44);
+                    4px 4px 0 rgba(24, 8, 4, 0.44),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+                    0 0 12px rgba(91, 28, 16, 0.24);
             }
             100% {
                 box-shadow:
-                    10px 12px 0 rgba(46, 20, 10, 0.28),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                    0 0 32px rgba(31, 9, 4, 0.2);
+                    4px 4px 0 rgba(24, 8, 4, 0.44),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.22);
             }
         }
 
         @keyframes cardFlicker {
             0%, 100% { filter: none; }
-            30% { filter: brightness(0.84) sepia(0.24); }
-            55% { filter: brightness(1.06) saturate(1.08); }
-            80% { filter: brightness(0.92) sepia(0.18); }
+            30% { filter: brightness(0.86) sepia(0.18); }
+            55% { filter: brightness(1.02) saturate(1.02); }
+            80% { filter: brightness(0.94) sepia(0.14); }
         }
 
         @keyframes cardIn {
@@ -475,7 +462,7 @@
             min-width: 78px;
             padding: 11px 12px;
             border: 1px solid rgba(84, 40, 22, 0.82);
-            border-radius: 12px;
+            border-radius: 0;
             background: linear-gradient(180deg, rgba(114, 60, 38, 0.94), rgba(72, 31, 18, 0.9));
             color: #f7e2cd;
             font-family: inherit;
@@ -484,17 +471,17 @@
             text-align: center;
             cursor: pointer;
             transition: transform 0.14s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 2px 2px 0 rgba(20, 7, 4, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             touch-action: manipulation;
             outline: none;
         }
 
-        .opt-btn:hover { background: linear-gradient(180deg, rgba(130, 68, 43, 0.96), rgba(89, 33, 18, 0.92)); border-color: rgba(113, 46, 25, 0.95); box-shadow: 0 0 16px rgba(82, 24, 13, 0.24); }
+        .opt-btn:hover { background: linear-gradient(180deg, rgba(130, 68, 43, 0.96), rgba(89, 33, 18, 0.92)); border-color: rgba(113, 46, 25, 0.95); box-shadow: 2px 2px 0 rgba(20, 7, 4, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.12); }
         .opt-btn:active { transform: scale(0.96); }
         .opt-btn.sel {
             background: linear-gradient(180deg, rgba(154, 58, 31, 0.96), rgba(90, 25, 12, 0.94));
             border-color: rgba(120, 28, 14, 0.96);
-            box-shadow: 0 0 18px rgba(70, 20, 8, 0.32), inset 0 0 14px rgba(28, 7, 5, 0.18);
+            box-shadow: 2px 2px 0 rgba(20, 7, 4, 0.48), inset 0 0 10px rgba(28, 7, 5, 0.22);
         }
         .opt-btn.opt-d { opacity: 0.74; font-style: italic; letter-spacing: 0.1em; }
 
@@ -551,6 +538,186 @@
         .prog-dot.cur { background: rgba(189, 65, 33, 0.96); width: 8px; height: 8px; box-shadow: 0 0 12px rgba(145, 34, 15, 0.55); }
         .prog-dot.sp { background: rgba(74, 24, 15, 0.82); }
         .prog-dot.sp.done { background: rgba(131, 38, 18, 0.95); }
+
+        .missing-tip {
+            max-width: 540px;
+            margin: 0 auto 12px;
+            padding: 9px 12px;
+            border: 1px solid rgba(116, 37, 19, 0.95);
+            background: rgba(19, 7, 4, 0.68);
+            color: #f7d8c2;
+            text-align: center;
+            font-size: 0.74rem;
+            letter-spacing: 0.08em;
+            line-height: 1.65;
+            opacity: 0;
+            transform: translateY(-4px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            box-shadow: 2px 2px 0 rgba(15, 6, 4, 0.42);
+        }
+
+        .missing-tip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pressure-tip {
+            max-width: 620px;
+            margin: 0 auto 10px;
+            padding: 10px 12px;
+            border: 1px solid rgba(126, 40, 21, 0.92);
+            background: rgba(21, 8, 5, 0.7);
+            color: #f7d8c2;
+            text-align: center;
+            font-size: 0.76rem;
+            letter-spacing: 0.1em;
+            line-height: 1.65;
+            box-shadow: 2px 2px 0 rgba(15, 6, 4, 0.42);
+            transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .pressure-tip.urgent {
+            color: #ffd4b8;
+            border-color: rgba(176, 69, 29, 0.96);
+            box-shadow: 0 0 22px rgba(206, 86, 34, 0.2), 2px 2px 0 rgba(15, 6, 4, 0.42);
+        }
+
+        .pressure-tip.danger {
+            color: #ffe8d8;
+            border-color: rgba(255, 114, 54, 0.96);
+            box-shadow: 0 0 24px rgba(255, 112, 41, 0.34), 2px 2px 0 rgba(15, 6, 4, 0.42);
+        }
+
+        .secret-face {
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            width: 56px;
+            height: auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0;
+            background: transparent;
+            opacity: 0.08;
+            filter: grayscale(0.28) contrast(1.04);
+            cursor: pointer;
+            z-index: 3;
+            transform: rotate(-7deg);
+            transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+            box-shadow: 0 0 18px rgba(56, 18, 9, 0.16);
+        }
+
+        .secret-face.hidden {
+            display: none;
+        }
+
+        .secret-face img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+
+        .secret-face:hover,
+        .secret-face:focus-visible {
+            opacity: 0.16;
+            transform: rotate(0deg) scale(1.08);
+            filter: grayscale(0.12) contrast(1.11);
+            outline: none;
+        }
+
+        .final-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 110;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            background:
+                radial-gradient(circle at center, rgba(69, 18, 10, 0.22), transparent 28%),
+                linear-gradient(180deg, #070201 0%, #180704 45%, #090303 100%);
+            color: #f7dcc8;
+            text-align: center;
+        }
+
+        .final-screen.on {
+            display: flex;
+        }
+
+        .final-message {
+            max-width: 760px;
+            font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+            line-height: 1.95;
+            letter-spacing: 0.12em;
+            text-shadow: 0 0 18px rgba(255, 137, 89, 0.28);
+        }
+
+        .final-burn {
+            position: fixed;
+            inset: 0;
+            z-index: 111;
+            pointer-events: none;
+            opacity: 0;
+            background:
+                radial-gradient(circle at 34% 44%, rgba(255, 146, 89, 0.98), transparent 28%),
+                radial-gradient(circle at 62% 48%, rgba(255, 206, 92, 0.4), transparent 20%),
+                radial-gradient(circle at 50% 60%, rgba(255, 72, 23, 0.55), transparent 38%),
+                linear-gradient(180deg, rgba(22, 6, 4, 0.12), rgba(0, 0, 0, 0.99));
+            background-size: 180% 180%, 150% 150%, 140% 140%, 100% 100%;
+            mix-blend-mode: screen;
+            box-shadow: inset 0 0 100px rgba(255, 120, 44, 0.28);
+            transition: opacity 0.45s ease;
+        }
+
+        .final-burn::before,
+        .final-burn::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .final-burn::before {
+            background:
+                radial-gradient(circle at 30% 32%, rgba(255, 200, 120, 0.42), transparent 12%),
+                radial-gradient(circle at 70% 30%, rgba(255, 124, 50, 0.34), transparent 12%),
+                radial-gradient(circle at 50% 72%, rgba(255, 78, 22, 0.28), transparent 16%);
+            opacity: 1;
+            animation: finalBurnDrift 1s linear infinite;
+        }
+
+        .final-burn::after {
+            background:
+                repeating-linear-gradient(90deg, rgba(255, 137, 71, 0.12), rgba(255, 137, 71, 0.12) 2px, transparent 2px, transparent 10px),
+                repeating-linear-gradient(0deg, rgba(255, 227, 152, 0.1), rgba(255, 227, 152, 0.1) 2px, transparent 2px, transparent 10px);
+            mix-blend-mode: lighten;
+            opacity: 0.85;
+            animation: finalBurnShimmer 1.1s linear infinite;
+        }
+
+        .final-burn.on {
+            opacity: 1;
+            animation: finalBurnPulse 2.4s cubic-bezier(0.16, 0.84, 0.44, 1) forwards;
+        }
+
+        @keyframes finalBurnPulse {
+            0% { opacity: 0.12; transform: scale(0.985); filter: brightness(0.78) saturate(0.8); }
+            18% { opacity: 0.98; transform: scale(1.03); filter: brightness(1.3) saturate(1.75); }
+            52% { opacity: 1; transform: scale(1.12); filter: brightness(1.42) saturate(2); }
+            100% { opacity: 1; transform: scale(1.22); filter: brightness(1.28) saturate(1.68); }
+        }
+
+        @keyframes finalBurnDrift {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(-3px, 4px, 0) scale(1.04); }
+            100% { transform: translate3d(2px, -2px, 0) scale(1); }
+        }
+
+        @keyframes finalBurnShimmer {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-24px, -18px, 0); }
+        }
 
         .trans-overlay {
             position: fixed;
@@ -673,6 +840,22 @@
 
         .result-foot { margin-top: 16px; font-size: 0.62rem; letter-spacing: 0.14em; color: #6a3421; opacity: 0.78; font-style: italic; }
 
+        .opt-btn:focus-visible,
+        .nav-btn:focus-visible,
+        .prog-dot:focus-visible {
+            outline: 2px solid rgba(250, 214, 183, 0.95);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
         @media (max-width: 640px) {
             .container { padding: 16px 10px 96px; }
             .q-card { padding: 20px 16px 18px; border-radius: 20px; }
@@ -733,18 +916,24 @@
             <div class="divider"></div>
         </header>
 
+        <div class="pressure-tip" id="pressureTip" aria-live="polite">剩余时间：01:30 | 还有 31 题未完成 | 它们快来了……</div>
+        <div class="missing-tip" id="missingTip" aria-live="polite"></div>
+
         <div class="q-stage" id="qStage">
             <div class="q-card" id="qCard">
                 <div class="q-num" id="qNum">第 1 题</div>
                 <div class="q-text" id="qText"></div>
                 <div class="options-row" id="optionsRow"></div>
+                <button class="secret-face" id="secretFace" aria-label="隐秘线索" type="button">
+                    <img src="网页上线/屏幕截图%202026-05-24%20140005.png" alt="隐秘线索" />
+                </button>
             </div>
         </div>
 
         <div class="nav-area" id="navArea">
-            <button class="nav-btn" id="prevBtn" title="上一题">?</button>
+            <button class="nav-btn" id="prevBtn" title="上一题" type="button" aria-label="上一题">←</button>
             <div class="prog-label" id="progLabel">1 / 31</div>
-            <button class="nav-btn" id="nextBtn" title="下一题">?</button>
+            <button class="nav-btn" id="nextBtn" title="下一题" type="button" aria-label="下一题">→</button>
         </div>
         <div class="prog-dots" id="progDots" style="justify-content:center;padding:4px 0;"></div>
 
@@ -757,6 +946,12 @@
             </div>
         </div>
     </div>
+
+    <div class="final-screen" id="finalScreen">
+        <p class="final-message" id="finalMessage"></p>
+    </div>
+
+    <div class="final-burn" id="finalBurn"></div>
 
     <script>
         (function() {
@@ -800,9 +995,9 @@
             const mandatoryFx = [4, 14, 24, 31];
             const allIds = questions.filter(q => !mandatoryFx.includes(q.id)).map(q => q.id);
             const shuffled = allIds.sort(() => Math.random() - 0.5);
-            const extras = shuffled.slice(0, 8 + Math.floor(Math.random() * 4));
+            const extras = shuffled.slice(0, 12 + Math.floor(Math.random() * 5));
             const fxIds = [...mandatoryFx, ...extras];
-            const fxTypes = ['distort', 'chromatic', 'shake', 'darkPulse', 'redFlash', 'staticNoise', 'whisper', 'audioSpike', 'particleBurst', 'microShake', 'heavyDistort'];
+            const fxTypes = ['distort', 'chromatic', 'shake', 'darkPulse', 'redFlash', 'staticNoise', 'whisper', 'audioSpike', 'particleBurst', 'microShake', 'heavyDistort', 'inkBleed'];
             const fxMap = {};
             fxIds.forEach(id => { fxMap[id] = fxTypes[Math.floor(Math.random() * fxTypes.length)]; });
             fxMap[4] = fxMap[4] || 'heavyDistort';
@@ -843,6 +1038,136 @@
             const fxRed = document.getElementById('fxRed');
             const fxStatic = document.getElementById('fxStatic');
             const whisperPopup = document.getElementById('whisperPopup');
+            const missingTip = document.getElementById('missingTip');
+            const pressureTip = document.getElementById('pressureTip');
+            const finalScreen = document.getElementById('finalScreen');
+            const finalMessage = document.getElementById('finalMessage');
+            const finalBurn = document.getElementById('finalBurn');
+            const secretFace = document.getElementById('secretFace');
+            let missingNoticeTimer = null;
+            let secretFaceFound = false;
+            let pressureRemaining = 120;
+            let pressureLastTick = performance.now();
+            let pressureSpeed = 1;
+            let pressureTimer = null;
+            let pressureTimedOut = false;
+            const secretFaceQuestionIds = new Set(
+                questions
+                    .filter(q => !q.final)
+                    .map(q => q.id)
+                    .sort(() => Math.random() - 0.5)
+                    .slice(0, 6)
+            );
+
+            function getFirstMissingIndex() {
+                return questions.findIndex(q => answers[q.id] === undefined);
+            }
+
+            function formatPressureTime(value) {
+                const totalSeconds = Math.max(0, Math.ceil(value));
+                const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+                const seconds = String(totalSeconds % 60).padStart(2, '0');
+                return `${minutes}:${seconds}`;
+            }
+
+            function getPendingIds() {
+                return questions.filter(q => answers[q.id] === undefined).map(q => q.id);
+            }
+
+            function updatePressureTip() {
+                const answered = Object.keys(answers).length;
+                const baseSpeed = 1.05 + answered * 0.015;
+                const urgency = (1 - pressureRemaining / 120) * 0.45;
+                pressureSpeed = Math.min(1.7, baseSpeed + urgency);
+                const pendingIds = getPendingIds();
+                const pendingCount = pendingIds.length;
+                const pendingText = pendingCount === 0
+                    ? '全部完成'
+                    : `还有 ${pendingCount} 题未完成：${pendingIds.slice(0, 6).join('、')}${pendingIds.length > 6 ? '…' : ''}`;
+                const statusClass = pressureRemaining <= 12 ? 'danger' : pressureRemaining <= 25 ? 'urgent' : '';
+
+                pressureTip.textContent = `剩余时间：${formatPressureTime(pressureRemaining)} | ${pendingText} | 它们快来了……`;
+                pressureTip.classList.toggle('urgent', statusClass === 'urgent');
+                pressureTip.classList.toggle('danger', statusClass === 'danger');
+            }
+
+            function updateSecretFaceVisibility() {
+                const isVisible = secretFaceQuestionIds.has(questions[curIdx].id);
+                secretFace.classList.toggle('hidden', !isVisible);
+                secretFace.setAttribute('aria-hidden', String(!isVisible));
+                secretFace.tabIndex = isVisible ? 0 : -1;
+            }
+
+            function startPressureTimer() {
+                pressureLastTick = performance.now();
+                if (pressureTimer) clearInterval(pressureTimer);
+                pressureTimer = setInterval(() => {
+                    const now = performance.now();
+                    const delta = (now - pressureLastTick) / 1000;
+                    pressureRemaining = Math.max(0, pressureRemaining - delta * pressureSpeed);
+                    pressureLastTick = now;
+                    updatePressureTip();
+                    if (pressureRemaining <= 0) {
+                        autoSkipRemaining();
+                    }
+                }, 120);
+            }
+
+            function autoSkipRemaining() {
+                if (isTrans) return;
+                if (pressureRemaining > 0 && !pressureTimedOut) return;
+                if (answers[questions[curIdx].id] === undefined) {
+                    answers[questions[curIdx].id] = 'skipped';
+                    pressureTip.textContent = `超时，已自动跳过第 ${questions[curIdx].id} 题。`;
+                    pressureTip.classList.add('danger');
+                    setTimeout(() => updatePressureTip(), 1200);
+                }
+
+                if (getPendingIds().length === 0) {
+                    maybeStartTransition();
+                    return;
+                }
+
+                pressureTimedOut = true;
+                if (curIdx < questions.length - 1) {
+                    navigateTo(curIdx + 1);
+                    setTimeout(autoSkipRemaining, 420);
+                } else {
+                    maybeStartTransition();
+                }
+            }
+
+            function showMissingNotice(targetIndex) {
+                const targetQuestion = questions[targetIndex];
+                if (!targetQuestion) return;
+                missingTip.textContent = `还有漏掉的题目，快点回去：第 ${targetQuestion.id} 题。它们快来了……`;
+                missingTip.classList.add('show');
+                clearTimeout(missingNoticeTimer);
+                missingNoticeTimer = setTimeout(() => missingTip.classList.remove('show'), 3200);
+            }
+
+            function maybeStartTransition() {
+                const missingIdx = getFirstMissingIndex();
+                if (missingIdx !== -1) {
+                    showMissingNotice(missingIdx);
+                    navigateTo(missingIdx);
+                    return;
+                }
+                startTransition();
+            }
+
+            secretFace?.addEventListener('click', () => {
+                if (secretFace.classList.contains('hidden')) return;
+                secretFaceFound = true;
+                playSlowPulse();
+                whisperPopup.textContent = '你……找到了它。';
+                whisperPopup.style.left = '64%';
+                whisperPopup.style.top = '68%';
+                whisperPopup.classList.remove('on');
+                void whisperPopup.offsetWidth;
+                whisperPopup.classList.add('on');
+                setTimeout(() => whisperPopup.classList.remove('on'), 2400);
+            });
 
             function initAudio() {
                 if (audioInit) return;
@@ -1134,6 +1459,11 @@
                         qTextEl.classList.add('micro-shake');
                         setTimeout(() => qTextEl.classList.remove('micro-shake'), 420);
                         break;
+                    case 'inkBleed':
+                        qTextEl.classList.add('ink-bleed');
+                        setTimeout(() => qTextEl.classList.remove('ink-bleed'), 900);
+                        playScratch();
+                        break;
                 }
             }
 
@@ -1161,6 +1491,7 @@
                 if (q.final) qCard.classList.add('final-q');
                 if (answers[q.id] === 'yes') qCard.classList.add('answered-yes');
                 updateAging();
+                updateSecretFaceVisibility();
 
                 optionsRow.innerHTML = '';
                 optLabels.forEach((label, i) => {
@@ -1204,12 +1535,17 @@
                 prevBtn.disabled = curIdx === 0;
                 nextBtn.style.display = curIdx === questions.length - 1 ? 'none' : 'flex';
                 if (questions.every(q => answers[q.id] !== undefined) && curIdx === questions.length - 1) {
-                    setTimeout(() => startTransition(), 700);
+                    setTimeout(() => maybeStartTransition(), 700);
                 }
             }
 
             function navigateTo(idx) {
                 if (isTrans || idx < 0 || idx >= questions.length) return;
+                const missingIdx = getFirstMissingIndex();
+                if (missingIdx !== -1 && missingIdx < idx) {
+                    showMissingNotice(missingIdx);
+                    idx = missingIdx;
+                }
                 isTrans = true;
                 qStage.classList.add('fading');
                 setTimeout(() => {
@@ -1219,8 +1555,8 @@
                     isTrans = false;
                     qCard.style.animation = 'none';
                     qCard.offsetHeight;
-                    qCard.style.animation = 'cardIn .4s ease-out';
-                }, 350);
+                    qCard.style.animation = 'cardIn .45s ease-out';
+                }, 450);
             }
 
             function handleOption(e) {
@@ -1240,25 +1576,46 @@
                     setTimeout(() => qTextEl.classList.remove('ink-bleed'), 800);
                     playScratch();
                 }
+                pressureLastTick = performance.now();
+                updatePressureTip();
                 updateDots();
                 updateProgLine();
                 updateAging();
-                if (curIdx < questions.length - 1) setTimeout(() => navigateTo(curIdx + 1), 500);
+                if (curIdx < questions.length - 1) setTimeout(() => navigateTo(curIdx + 1), 700);
                 else updateNav();
             }
+
+            prevBtn.addEventListener('click', () => navigateTo(curIdx - 1));
+            nextBtn.addEventListener('click', () => {
+                const missingIdx = getFirstMissingIndex();
+                if (missingIdx !== -1) {
+                    showMissingNotice(missingIdx);
+                    navigateTo(missingIdx);
+                    return;
+                }
+                if (curIdx < questions.length - 1) {
+                    navigateTo(curIdx + 1);
+                } else {
+                    maybeStartTransition();
+                }
+            });
 
             const transitionOpeners = [
                 '旧档案并不沉默。\n它只是在等待你把最后一页翻完。\n此刻，纸面上的裂纹开始合拢。',
                 '纸张记得每一个停顿。\n它会先把笔迹磨平，\n再把你不想承认的部分抹掉。',
                 '别回头。\n这里的字不是写给你看的。\n它们只是被留在这里的证词。',
-                '最后一页不是终点。\n它只是一个换位。\n被改写的地方，像是曾经有人躲在后面。'
+                '最后一页不是终点。\n它只是一个换位。\n被改写的地方，像是曾经有人躲在后面。',
+                '某些记号会在边角发亮。\n不是为了提醒你，\n而是为了让你在翻页前停一秒。',
+                '这份记录不是空白。\n只是被刻意压得更浅。\n你看的越久，越容易误以为自己在确认。'
             ];
 
             const transitionClosers = [
                 '你看到的不是结论。\n而是被重新整理过的残留。\n有人主动把它们改成了更容易被接受的样子。',
                 '这里有一处空白，\n和你记忆里并不一致。\n它像是被刻意保留下来的漏洞。',
                 '你不是在阅读答案。\n你是在阅读那份被保留、被删改、被重新命名过的记录。',
-                '字迹在漆黑里退回。\n下一段文字会从空白里慢慢长出来。\n它不想让自己被发现。'
+                '字迹在漆黑里退回。\n下一段文字会从空白里慢慢长出来。\n它不想让自己被发现。',
+                '它把最尖锐的部分磨圆。\n把最难解释的地方留白。\n然后把你自己也一起带进去了。',
+                '最后一行并不是结束。\n只是换了个面孔。\n下一段话会比这段更安静，也更难辨认。'
             ];
 
             function renderTypewriter(text) {
@@ -1315,24 +1672,70 @@
                 const opener = transitionOpeners[Math.floor(Math.random() * transitionOpeners.length)];
                 const closer = transitionClosers[Math.floor(Math.random() * transitionClosers.length)];
 
-                typeText(opener, 55, () => {
-                    eraseText(opener, 45, () => {
-                        typeText(closer, 55, () => {
-                            setTimeout(() => {
-                                transOverlay.classList.add('distort-final');
-                                document.body.classList.add('flicker');
-                                setTimeout(() => document.body.classList.remove('flicker'), 1400);
-                                playRevealSound();
-                                setTimeout(() => {
-                                    transOverlay.classList.remove('on', 'distort-final');
-                                    qStage.style.display = 'none';
-                                    showResult();
-                                    fadeAmbient(4);
-                                }, 1800);
-                            }, 850);
+                const pulseSequence = (texts, onDone) => {
+                    let index = 0;
+
+                    const nextPulse = () => {
+                        if (index >= texts.length) {
+                            onDone();
+                            return;
+                        }
+
+                        const text = texts[index];
+                        index += 1;
+                        typeText(text, 8, () => {
+                            eraseText(text, 5, () => {
+                                setTimeout(nextPulse, 45);
+                            });
                         });
-                    });
+                    };
+
+                    nextPulse();
+                };
+
+                pulseSequence([opener, closer, opener, closer, opener, closer], () => {
+                    setTimeout(() => {
+                        transOverlay.classList.add('distort-final');
+                        document.body.classList.add('flicker');
+                        setTimeout(() => document.body.classList.remove('flicker'), 1400);
+                        playRevealSound();
+                        setTimeout(() => {
+                            transOverlay.classList.remove('on', 'distort-final');
+                            qStage.style.display = 'none';
+                            window.scrollTo({ top: 0, behavior: 'auto' });
+                            showFinalOutcome();
+                            fadeAmbient(4);
+                        }, 2100);
+                    }, 180);
                 });
+            }
+
+            function destroyPage() {
+                document.body.innerHTML = '';
+                document.body.style.background = '#000';
+                document.body.style.color = '#000';
+            }
+
+            function showFinalOutcome() {
+                resultArea.style.display = 'none';
+                resultArea.classList.remove('on');
+                navArea.style.display = 'none';
+                progDots.style.display = 'none';
+                qStage.style.display = 'none';
+                if (pressureTimer) clearInterval(pressureTimer);
+                finalScreen.classList.add('on');
+                finalBurn.classList.remove('on');
+                finalMessage.textContent = secretFaceFound
+                    ? '恭喜你，你有异于常人的观察力。今晚入眠时会有工作人员带你进一步测试。如果你还记得梦中的面试的话恭喜你，如果没有的话呵呵你只是参加了一个中二病的测试。'
+                    : '请忘记前面的内容。您的测试不合格。';
+                setTimeout(() => {
+                    finalBurn.classList.add('on');
+                    document.body.classList.add('flicker');
+                    setTimeout(() => document.body.classList.remove('flicker'), 1500);
+                }, 5000);
+                setTimeout(() => {
+                    destroyPage();
+                }, 12000);
             }
 
             function buildNormalSummary(yesCount, maybeCount, refuseCount) {
@@ -1387,34 +1790,6 @@
                 }
             ];
 
-            function showResult() {
-                const yesCount = Object.values(answers).filter(v => v === 'yes').length;
-                const maybeCount = Object.values(answers).filter(v => v === 'maybe').length;
-                const refuseCount = Object.values(answers).filter(v => v === 'refuse').length;
-                const preamble = resultPreambles[Math.floor(Math.random() * resultPreambles.length)];
-
-                resultArea.classList.add('on');
-                resultArea.style.display = 'block';
-                resultArea.style.opacity = '1';
-                resultArea.style.visibility = 'visible';
-                progLine.style.width = '100%';
-                resultTitle.textContent = preamble.title;
-                resultText.innerHTML = preamble.text;
-                resultFoot.textContent = preamble.foot;
-                window.scrollTo({ top: 0, behavior: 'auto' });
-
-                setTimeout(() => {
-                    const summary = buildNormalSummary(yesCount, maybeCount, refuseCount);
-                    resultTitle.textContent = summary.title;
-                    resultText.innerHTML = summary.text;
-                    resultFoot.textContent = summary.foot;
-                    requestAnimationFrame(() => {
-                        const targetTop = resultArea.getBoundingClientRect().top + window.scrollY - 12;
-                        window.scrollTo({ top: targetTop, behavior: 'smooth' });
-                    });
-                }, 4200);
-            }
-
             const headerTitle = document.querySelector('header h1');
             if (headerTitle) {
                 headerTitle.style.opacity = '0';
@@ -1452,6 +1827,8 @@
             })();
 
             renderQuestion(0);
+            updatePressureTip();
+            startPressureTimer();
             updateDots();
             updateProgLine();
             updateNav();
